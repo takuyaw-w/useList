@@ -1,6 +1,19 @@
 {
   "name": "@takuyaw-w/uselist",
   "version": "1.0.0",
+  "description": "This is a composable for Vue 3 that helps manage and manipulate lists. It encapsulates the state of the list and provides a convenient set of methods for modifying the list.",
+  "author": {
+    "name": "takuyaw-w",
+    "email": "takuya.jamtb@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/takuyaw-w/useList/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/takuyaw-w/useList.git"
+  },
   "files": [
     "dist"
   ],
@@ -48,6 +61,11 @@
     "vitest": "^0.34.2",
     "vue-tsc": "^1.8.8"
   },
+  "keywords": [
+    "vue",
+    "Vue",
+    "composable"
+  ],
   "publishConfig": {
     "access": "public"
   }
