@@ -1,6 +1,6 @@
 {
   "name": "@takuyaw-w/uselist",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This is a composable for Vue 3 that helps manage and manipulate lists. It encapsulates the state of the list and provides a convenient set of methods for modifying the list.",
   "author": {
     "name": "takuyaw-w",
