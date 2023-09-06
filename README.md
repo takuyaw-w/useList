@@ -1,52 +1,43 @@
-# useList
+# @takuyaw-w/useList
 
-This template should help get you started developing with Vue 3 in Vite.
+@takuyaw-w/useList is a custom hook for Vue 3. This custom hook allows you to easily manage and manipulate lists. It encapsulates the state of the list and provides convenient methods.
 
-## Recommended IDE Setup
+## Installation
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+You can install this custom hook using the following command:
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+```bash
+npm install @takuyaw-w/uselist
 ```
 
-### Compile and Hot-Reload for Development
+## Usage
 
-```sh
-npm run dev
+Example of importing and using the custom hook:
+
+```typescript
+import { useList } from '@takuyaw-w/useList';
+
+// Initialize the custom hook to manage the list
+const [list, actions] = useList([1,2,3]);
+
+// List operations
+actions.push(4);
+actions.removeAt(1);
+
+// Display the state of the list
+console.log(list.value); // [1,3,4]
 ```
 
-### Type-Check, Compile and Minify for Production
+## Methods
 
-```sh
-npm run build
-```
+The useList custom hook provides the following methods:
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- set(newList) - Replaces the list with a new list.
+- push(element) - Adds an element to the end of the list.
+- unshift(element) - Adds an element to the beginning of the list.
+- clear() - Empties the list.
+- insertAt(index, element) - Inserts an element at the specified index.
+- removeAt(index) - Removes the element at the specified index.
+- updateAt(index, element) - Replaces the element at the specified index with a new element.
+- filter(condition) - Keeps only the elements that match the condition in the list.
+- sort(compareFn) - Sorts the list based on a custom comparison function.
