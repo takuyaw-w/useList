@@ -15,7 +15,7 @@ npm install @takuyaw-w/uselist
 Example of importing and using the custom hook:
 
 ```typescript
-import { useList } from '@takuyaw-w/useList';
+import { useList } from '@takuyaw-w/uselist';
 
 // Initialize the custom hook to manage the list
 const [list, actions] = useList([1,2,3]);
@@ -28,16 +28,23 @@ actions.removeAt(1);
 console.log(list.value); // [1,3,4]
 ```
 
-## Methods
+## Parametor
 
-The useList custom hook provides the following methods:
+|Name|Type|Description|
+|---|---|---|
+|defaultList|T[]|The initial list of elements. Default is an empty array.|
 
-- set(newList) - Replaces the list with a new list.
-- push(element) - Adds an element to the end of the list.
-- unshift(element) - Adds an element to the beginning of the list.
-- clear() - Empties the list.
-- insertAt(index, element) - Inserts an element at the specified index.
-- removeAt(index) - Removes the element at the specified index.
-- updateAt(index, element) - Replaces the element at the specified index with a new element.
-- filter(condition) - Keeps only the elements that match the condition in the list.
-- sort(compareFn) - Sorts the list based on a custom comparison function.
+## Return Value
+
+|Name|Parameters|Description|
+|---|---|---|
+|[0]||The current list of elements.|
+|[1].set|newList: T[]|Replaces the list with a new list.|
+|[1].push|element: T|Adds an element to the end of the list.|
+|[1].unshift|element: T|Adds an element to the beginning of the list.|
+|[1].removeAt|index: number|Removes the element at the specified index.|
+|[1].insertAt|index: number, element: T|Inserts an element at the specified index.|
+|[1].updateAt|index: number, element: T|Replaces the element at the specified index with a new element.|
+|[1].clear||Empties the list.|
+|[1].filter|condition: (element: T) => boolean|Keeps only the elements that match the condition in the list.|
+|[1].sort|compareFn: (a: T, b: T) => number|Sorts the list based on a custom comparison function.|
